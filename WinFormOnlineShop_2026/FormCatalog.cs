@@ -17,14 +17,22 @@ namespace WinFormOnlineShop_2026
 
         void ShowCatalog()
         {
-            int i = 0;
+            //int i = 0;
             foreach (Product product in catalog.getAll())
-                listBoxCatalog.Items.Add($"{++i} {product}");
+                listBoxCatalog.Items.Add($"{product.Name}");
         }
 
         private void listBoxCatalog_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            labelProductName.Text = listBoxCatalog.SelectedItem.ToString();
+            foreach(Product product in catalog.getAll())
+            { 
+                if (listBoxCatalog.SelectedItem.ToString() == product.Name)
+                {
+                    labelDescription.Text = product.Description;
+                    labelDescription.Text += "\n" + product.Price + " рублей";
+                } 
+            }
         }
     }
 }
