@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            checkedListBoxBasketItems = new CheckedListBox();
             buttonConfirm = new Button();
+            checkedListBoxBasketItems = new CheckedListBox();
+            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(buttonConfirm);
             panel1.Controls.Add(checkedListBoxBasketItems);
             panel1.Dock = DockStyle.Fill;
@@ -43,6 +45,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 450);
             panel1.TabIndex = 0;
+            // 
+            // buttonConfirm
+            // 
+            buttonConfirm.Location = new Point(645, 311);
+            buttonConfirm.Name = "buttonConfirm";
+            buttonConfirm.Size = new Size(143, 127);
+            buttonConfirm.TabIndex = 1;
+            buttonConfirm.Text = "Подтвердить заказ";
+            buttonConfirm.UseVisualStyleBackColor = true;
             // 
             // checkedListBoxBasketItems
             // 
@@ -53,14 +64,15 @@
             checkedListBoxBasketItems.Size = new Size(276, 450);
             checkedListBoxBasketItems.TabIndex = 0;
             // 
-            // buttonConfirm
+            // button1
             // 
-            buttonConfirm.Location = new Point(449, 311);
-            buttonConfirm.Name = "buttonConfirm";
-            buttonConfirm.Size = new Size(143, 127);
-            buttonConfirm.TabIndex = 1;
-            buttonConfirm.Text = "Подтвердить заказ";
-            buttonConfirm.UseVisualStyleBackColor = true;
+            button1.Location = new Point(282, 352);
+            button1.Name = "button1";
+            button1.Size = new Size(108, 86);
+            button1.TabIndex = 2;
+            button1.Text = "Удалить товар";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // FormBasket
             // 
@@ -70,6 +82,7 @@
             Controls.Add(panel1);
             Name = "FormBasket";
             Text = "FormBasket";
+            Load += FormBasket_Load;
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -78,6 +91,7 @@
 
         private Panel panel1;
         private Button buttonConfirm;
-        private CheckedListBox checkedListBoxBasketItems;
+        public CheckedListBox checkedListBoxBasketItems;
+        private Button button1;
     }
 }

@@ -5,6 +5,7 @@ namespace WinFormOnlineShop_2026
     public partial class FormCatalog : Form
     {
         Catalog catalog = new Catalog();
+        FormBasket formBasket = new FormBasket();
         public FormCatalog()
         {
             InitializeComponent();
@@ -25,13 +26,22 @@ namespace WinFormOnlineShop_2026
         private void listBoxCatalog_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelProductName.Text = listBoxCatalog.SelectedItem.ToString();
-            foreach(Product product in catalog.getAll())
-            { 
+            foreach (Product product in catalog.getAll())
+            {
                 if (listBoxCatalog.SelectedItem.ToString() == product.Name)
                 {
                     labelDescription.Text = product.Description;
                     labelDescription.Text += "\n" + product.Price + " рублей";
-                } 
+                }
+            }
+        }
+
+        private void buttonBasket_Click(object sender, EventArgs e)
+        {
+            formBasket.Show();
+            if (listBoxCatalog.SelectedItem != null)
+            {
+                formBasket.checkedListBoxBasketItems.Items.Add(listBoxCatalog.SelectedItem);
             }
         }
     }
