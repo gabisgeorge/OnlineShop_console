@@ -36,6 +36,7 @@
             labelDescription = new Label();
             labelProductName = new Label();
             label2 = new Label();
+            buttonBasket = new Button();
             panelCatalog.SuspendLayout();
             panelProduct.SuspendLayout();
             SuspendLayout();
@@ -80,6 +81,7 @@
             // panelProduct
             // 
             panelProduct.BackColor = SystemColors.ControlLight;
+            panelProduct.Controls.Add(buttonBasket);
             panelProduct.Controls.Add(labelDescription);
             panelProduct.Controls.Add(labelProductName);
             panelProduct.Controls.Add(label2);
@@ -98,7 +100,7 @@
             labelDescription.Name = "labelDescription";
             labelDescription.Size = new Size(286, 132);
             labelDescription.TabIndex = 3;
-            labelDescription.Text = "Название товара";
+            labelDescription.Text = "Описание товара";
             // 
             // labelProductName
             // 
@@ -118,6 +120,15 @@
             label2.Size = new Size(98, 15);
             label2.TabIndex = 1;
             label2.Text = "Карточка товара";
+            // 
+            // buttonBasket
+            // 
+            buttonBasket.Location = new Point(111, 299);
+            buttonBasket.Name = "buttonBasket";
+            buttonBasket.Size = new Size(286, 62);
+            buttonBasket.TabIndex = 4;
+            buttonBasket.Text = "Добавить в корзину";
+            buttonBasket.UseVisualStyleBackColor = true;
             // 
             // FormCatalog
             // 
@@ -146,5 +157,6 @@
         private Label labelProductName;
         private Label label2;
         private Label labelDescription;
+        private Button buttonBasket;
     }
 }
