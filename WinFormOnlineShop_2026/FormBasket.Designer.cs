@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            labelPrice = new Label();
             buttonDelete = new Button();
             buttonConfirm = new Button();
             checkedListBoxBasketItems = new CheckedListBox();
@@ -37,6 +38,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(labelPrice);
             panel1.Controls.Add(buttonDelete);
             panel1.Controls.Add(buttonConfirm);
             panel1.Controls.Add(checkedListBoxBasketItems);
@@ -45,6 +47,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 450);
             panel1.TabIndex = 0;
+            // 
+            // labelPrice
+            // 
+            labelPrice.AutoSize = true;
+            labelPrice.Location = new Point(645, 283);
+            labelPrice.Name = "labelPrice";
+            labelPrice.Size = new Size(73, 15);
+            labelPrice.TabIndex = 3;
+            labelPrice.Text = "Стоимость :";
             // 
             // buttonDelete
             // 
@@ -74,6 +85,7 @@
             checkedListBoxBasketItems.Name = "checkedListBoxBasketItems";
             checkedListBoxBasketItems.Size = new Size(276, 450);
             checkedListBoxBasketItems.TabIndex = 0;
+            checkedListBoxBasketItems.ItemCheck += checkedListBoxBasketItems_ItemCheck;
             // 
             // FormBasket
             // 
@@ -85,6 +97,7 @@
             Text = "FormBasket";
             Load += FormBasket_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -94,5 +107,6 @@
         private Button buttonConfirm;
         public CheckedListBox checkedListBoxBasketItems;
         private Button buttonDelete;
+        private Label labelPrice;
     }
 }

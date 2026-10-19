@@ -42,6 +42,13 @@ namespace WinFormOnlineShop_2026
             if (listBoxCatalog.SelectedItem != null)
             {
                 formBasket.checkedListBoxBasketItems.Items.Add(listBoxCatalog.SelectedItem);
+                foreach (Product product in catalog.getAll())
+                {
+                    if (listBoxCatalog.SelectedItem.ToString() == product.Name)
+                    {
+                        formBasket.catalogbasket.Add(product);
+                    }
+                }
             }
         }
     }
