@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            buttonDelete = new Button();
             buttonConfirm = new Button();
             checkedListBoxBasketItems = new CheckedListBox();
-            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(buttonDelete);
             panel1.Controls.Add(buttonConfirm);
             panel1.Controls.Add(checkedListBoxBasketItems);
             panel1.Dock = DockStyle.Fill;
@@ -45,6 +45,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 450);
             panel1.TabIndex = 0;
+            // 
+            // buttonDelete
+            // 
+            buttonDelete.Location = new Point(282, 352);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(108, 86);
+            buttonDelete.TabIndex = 2;
+            buttonDelete.Text = "Удалить товар";
+            buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.Click += button1_Click;
             // 
             // buttonConfirm
             // 
@@ -54,6 +64,7 @@
             buttonConfirm.TabIndex = 1;
             buttonConfirm.Text = "Подтвердить заказ";
             buttonConfirm.UseVisualStyleBackColor = true;
+            buttonConfirm.Click += buttonConfirm_Click;
             // 
             // checkedListBoxBasketItems
             // 
@@ -63,16 +74,6 @@
             checkedListBoxBasketItems.Name = "checkedListBoxBasketItems";
             checkedListBoxBasketItems.Size = new Size(276, 450);
             checkedListBoxBasketItems.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(282, 352);
-            button1.Name = "button1";
-            button1.Size = new Size(108, 86);
-            button1.TabIndex = 2;
-            button1.Text = "Удалить товар";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // FormBasket
             // 
@@ -92,6 +93,6 @@
         private Panel panel1;
         private Button buttonConfirm;
         public CheckedListBox checkedListBoxBasketItems;
-        private Button button1;
+        private Button buttonDelete;
     }
 }
